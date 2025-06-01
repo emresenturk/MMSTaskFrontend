@@ -120,6 +120,7 @@ export function AuthProvider({ children }) {
 
   const register = useCallback(async (email, password, firstName, lastName) => {
     const data = { email, password, firstName, lastName };
+    console.log(`Registration Data: ${JSON.stringify(data)}}`);
     const response = await fetch('http://localhost:3000/api/auth/register', {
       method: 'POST',
       headers: {
